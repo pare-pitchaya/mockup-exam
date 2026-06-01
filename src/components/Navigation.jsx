@@ -10,15 +10,27 @@ export default function Navigation() {
       <nav className="flex flex-col gap-3 font-['Itim'] text-xl font-bold">
         <NavLink
           to="/todos"
-          className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-sky-100"
+          className={({ isActive }) =>
+            isActive
+              ? "rounded-md bg-yellow-200 px-3 py-2 font-extrabold"
+              : "rounded-md px-3 py-2 text-stone-500 hover:bg-sky-100"
+          }
         >
-          <TodoIcon /> <span>Todos</span>
+          <span className="flex items-center gap-2">
+            <TodoIcon /> <span>Todos</span>
+          </span>
         </NavLink>
         <NavLink
           to="/posts"
-          className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-sky-100"
+          className={({ isActive }) =>
+            isActive
+              ? "rounded-md bg-yellow-200 px-3 py-2 font-extrabold"
+              : "rounded-md px-3 py-2 text-stone-500 hover:bg-sky-100"
+          }
         >
-          <PostIcon /> <span>Posts</span>
+          <span className="flex items-center gap-2">
+            <PostIcon /> <span>Posts</span>
+          </span>
         </NavLink>
       </nav>
     </aside>
