@@ -12,9 +12,10 @@ export const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
+      { index: true, element: <HomePage /> },
       {
         path: "todos",
-        element: <ResourceLayout basePath="/todos" />,
+        element: <ResourceLayout />,
         children: [
           { index: true, element: <TodosPage /> },
           { path: "create", element: <CreateTodoPage /> },
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "posts",
-        element: <ResourceLayout basePath="/posts" />,
+        element: <ResourceLayout />,
         children: [
           { index: true, element: <PostsPage /> },
           { path: "create", element: <CreatePostPage /> },

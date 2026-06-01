@@ -1,10 +1,8 @@
 import { Outlet } from "react-router";
-import Header from "../Header";
 
-export default function ResourceLayout({ basePath }) {
+export default function ResourceLayout() {
   return (
     <>
-      <Header basePath={basePath} />
       <Outlet />
     </>
   );
